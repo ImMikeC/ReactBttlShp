@@ -6,7 +6,7 @@ import { XAxis } from "./EjeHorizX";
 
 import { Context } from "../store/Context";
 
-const PlayerGridsContainer = styled.div`
+const ContenedorJugador = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
@@ -14,7 +14,7 @@ const PlayerGridsContainer = styled.div`
   width: 15rem;
 `;
 
-const GridSqrSea = styled.div`
+const SeaComp = styled.div`
   box-sizing: border-box;
   background-color: blue;
   width: 1.5rem;
@@ -23,192 +23,191 @@ const GridSqrSea = styled.div`
   border: 0.5px solid #f0f8ff;
 
   p {
-    visibility: hidden;
+    view: hidden;
   }
 
   ${(props) =>
-    props.isaShip &&
+    props.shipRight &&
     css`
       background-color: orange;
     `}
 
   ${(props) =>
-    props.isHit &&
+    props.rightShot &&
     css`
       background-color: red;
     `}
 
     ${(props) =>
-    props.wasMissed &&
+    props.missedShot &&
     css`
       background-color: green;
     `}
 `;
 
-const BattleGridsContainerGridY = styled.div`
+const EjeVertical = styled.div`
   display: flex;
 `;
 
-const BattleGridsContainerGridX = styled.div`
+const EjeHorizontal = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const PlayerBattleGrid = () => {
+const CampoDeBatalla = () => {
   const { store } = useContext(Context);
-  let [playerArr, setPlayerArr] = useState(tableroUno);
+  let [tableroJugador, definirTableroJugador] = useState(tableroUno);
 
   useEffect(() => {
     let enemyX = store.compTarget[0];
     let enemyY = store.compTarget[1];
-    let displayedArr = [...playerArr];
-    if (store.compTarget.length !== 0 && displayedArr[enemyX][enemyY] === 1) {
-      displayedArr[enemyX][enemyY] = 3;
-      setPlayerArr(displayedArr);
-      console.log("enemy hit, sorry");
+    let arregloOrdenado = [...tableroJugador];
+    if (store.compTarget.length !== 0 && arregloOrdenado[enemyX][enemyY] === 1) {
+      arregloOrdenado[enemyX][enemyY] = 3;
+      definirTableroJugador(arregloOrdenado);
     } else if (
       store.compTarget.length !== 0 &&
-      displayedArr[enemyX][enemyY] === 0
+      arregloOrdenado[enemyX][enemyY] === 0
     ) {
-      displayedArr[enemyX][enemyY] = 2;
-      setPlayerArr(displayedArr);
+      arregloOrdenado[enemyX][enemyY] = 2;
+      definirTableroJugador(arregloOrdenado);
     }
-  }, [playerArr, store.compTarget]);
+  }, [tableroJugador, store.compTarget]);
 
   return (
     <>
-      <BattleGridsContainerGridX>
+      <EjeHorizontal>
         <XAxis></XAxis>
-        <BattleGridsContainerGridY>
+        <EjeVertical>
           <YAxis></YAxis>
-          <PlayerGridsContainer>
-            {playerArr[0].map((ele, key) => {
+          <ContenedorJugador>
+            {tableroJugador[0].map((ele, key) => {
               return (
-                <GridSqrSea
+                <SeaComp
                   key={key}
-                  isaShip={ele === 1 ? true : false}
-                  wasMissed={ele === 2 ? true : false}
-                  isHit={ele === 3 ? true : false}
+                  shipRight={ele === 1 ? true : false}
+                  missedShot={ele === 2 ? true : false}
+                  rightShot={ele === 3 ? true : false}
                 >
                   <p>{ele}</p>
-                </GridSqrSea>
+                </SeaComp>
               );
             })}
-            {playerArr[1].map((ele, key) => {
+            {tableroJugador[1].map((ele, key) => {
               return (
-                <GridSqrSea
+                <SeaComp
                   key={key}
-                  isaShip={ele === 1 ? true : false}
-                  wasMissed={ele === 2 ? true : false}
-                  isHit={ele === 3 ? true : false}
+                  shipRight={ele === 1 ? true : false}
+                  missedShot={ele === 2 ? true : false}
+                  rightShot={ele === 3 ? true : false}
                 >
                   <p>{ele}</p>
-                </GridSqrSea>
+                </SeaComp>
               );
             })}
             {tableroUno[2].map((ele, key) => {
               return (
-                <GridSqrSea
+                <SeaComp
                   key={key}
-                  isaShip={ele === 1 ? true : false}
-                  wasMissed={ele === 2 ? true : false}
-                  isHit={ele === 3 ? true : false}
+                  shipRight={ele === 1 ? true : false}
+                  missedShot={ele === 2 ? true : false}
+                  rightShot={ele === 3 ? true : false}
                 >
                   <p>{ele}</p>
-                </GridSqrSea>
+                </SeaComp>
               );
             })}
             {tableroUno[3].map((ele, key) => {
               return (
-                <GridSqrSea
+                <SeaComp
                   key={key}
-                  isaShip={ele === 1 ? true : false}
-                  wasMissed={ele === 2 ? true : false}
-                  isHit={ele === 3 ? true : false}
+                  shipRight={ele === 1 ? true : false}
+                  missedShot={ele === 2 ? true : false}
+                  rightShot={ele === 3 ? true : false}
                 >
                   <p>{ele}</p>
-                </GridSqrSea>
+                </SeaComp>
               );
             })}
-            {playerArr[4].map((ele, key) => {
+            {tableroJugador[4].map((ele, key) => {
               return (
-                <GridSqrSea
+                <SeaComp
                   key={key}
-                  isaShip={ele === 1 ? true : false}
-                  wasMissed={ele === 2 ? true : false}
-                  isHit={ele === 3 ? true : false}
+                  shipRight={ele === 1 ? true : false}
+                  missedShot={ele === 2 ? true : false}
+                  rightShot={ele === 3 ? true : false}
                 >
                   <p>{ele}</p>
-                </GridSqrSea>
+                </SeaComp>
               );
             })}
-            {playerArr[5].map((ele, key) => {
+            {tableroJugador[5].map((ele, key) => {
               return (
-                <GridSqrSea
+                <SeaComp
                   key={key}
-                  isaShip={ele === 1 ? true : false}
-                  wasMissed={ele === 2 ? true : false}
-                  isHit={ele === 3 ? true : false}
+                  shipRight={ele === 1 ? true : false}
+                  missedShot={ele === 2 ? true : false}
+                  rightShot={ele === 3 ? true : false}
                 >
                   <p>{ele}</p>
-                </GridSqrSea>
+                </SeaComp>
               );
             })}
-            {playerArr[6].map((ele, key) => {
+            {tableroJugador[6].map((ele, key) => {
               return (
-                <GridSqrSea
+                <SeaComp
                   key={key}
-                  isaShip={ele === 1 ? true : false}
-                  wasMissed={ele === 2 ? true : false}
-                  isHit={ele === 3 ? true : false}
+                  shipRight={ele === 1 ? true : false}
+                  missedShot={ele === 2 ? true : false}
+                  rightShot={ele === 3 ? true : false}
                 >
                   <p>{ele}</p>
-                </GridSqrSea>
+                </SeaComp>
               );
             })}
-            {playerArr[7].map((ele, key) => {
+            {tableroJugador[7].map((ele, key) => {
               return (
-                <GridSqrSea
+                <SeaComp
                   key={key}
-                  isaShip={ele === 1 ? true : false}
-                  wasMissed={ele === 2 ? true : false}
-                  isHit={ele === 3 ? true : false}
+                  shipRight={ele === 1 ? true : false}
+                  missedShot={ele === 2 ? true : false}
+                  rightShot={ele === 3 ? true : false}
                 >
                   <p>{ele}</p>
-                </GridSqrSea>
+                </SeaComp>
               );
             })}
-            {playerArr[8].map((ele, key) => {
+            {tableroJugador[8].map((ele, key) => {
               return (
-                <GridSqrSea
+                <SeaComp
                   key={key}
-                  isaShip={ele === 1 ? true : false}
-                  wasMissed={ele === 2 ? true : false}
-                  isHit={ele === 3 ? true : false}
+                  shipRight={ele === 1 ? true : false}
+                  missedShot={ele === 2 ? true : false}
+                  rightShot={ele === 3 ? true : false}
                 >
                   <p>{ele}</p>
-                </GridSqrSea>
+                </SeaComp>
               );
             })}
-            {playerArr[9].map((ele, key) => {
+            {tableroJugador[9].map((ele, key) => {
               return (
-                <GridSqrSea
+                <SeaComp
                   key={key}
-                  isaShip={ele === 1 ? true : false}
-                  wasMissed={ele === 2 ? true : false}
-                  isHit={ele === 3 ? true : false}
+                  shipRight={ele === 1 ? true : false}
+                  missedShot={ele === 2 ? true : false}
+                  rightShot={ele === 3 ? true : false}
                 >
                   <p>{ele}</p>
-                </GridSqrSea>
+                </SeaComp>
               );
             })}
             <div>Jugador</div>
-          </PlayerGridsContainer>
+          </ContenedorJugador>
         
-        </BattleGridsContainerGridY>
-      </BattleGridsContainerGridX>
+        </EjeVertical>
+      </EjeHorizontal>
     </>
   );
 };
 
-export default PlayerBattleGrid;
+export default CampoDeBatalla;

@@ -10,7 +10,7 @@ const GridCoord = styled.div`
   margin: 0px;
   border: 0.5px solid #f0f8ff;
   p {
-    visibility: visible;
+    view: visible;
     font-size: 0.8rem;
     margin: 0;
     text-align: center;

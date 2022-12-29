@@ -6,7 +6,7 @@ import { YAxis } from "./EjeVertY";
 import { Context } from "../store/Context";
 import { XAxis } from "./EjeHorizX";
 
-const PanelComp = styled.div`
+const PanelCompPlayer = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
@@ -22,7 +22,7 @@ const SeaPlayer = styled.div`
   margin: 0px;
   border: 0.5px solid #f0f8ff;
   p {
-    visibility: hidden;
+    view: hidden;
   }
 
   ${(props) =>
@@ -133,7 +133,7 @@ const TableroComp = () => {
         <XAxis></XAxis>
         <PanelY>
           <YAxis />
-          <PanelComp>
+          <PanelCompPlayer>
             {arrayComp[0].map((fit, key) => {
               return (
                 <SeaPlayer
@@ -286,7 +286,7 @@ const TableroComp = () => {
                 </SeaPlayer>
               );
             })}
-          </PanelComp>
+          </PanelCompPlayer>
         </PanelY>
         <div>Computadora</div>
       </PanelX>

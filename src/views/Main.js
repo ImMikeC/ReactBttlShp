@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import PlayerBattleGrid from "./TableroDosComp";
+import CampoDeBatalla from "./TableroDosComp";
 import TableroComp from "./TableroUnoJugador";
 //import bkg from "../img/bkg.jpg";
 
@@ -36,7 +36,7 @@ const ControlsContainerView = () => {
         <Title>ReactJS BattleShip</Title>
       </ControlsContainer>
       <BattleGridsContainer>
-        <PlayerBattleGrid />
+        <CampoDeBatalla />
         <TableroComp />
       </BattleGridsContainer>
     </>
