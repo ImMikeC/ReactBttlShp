@@ -18,14 +18,15 @@ const GridCoord = styled.div`
   }
 `;
 
-const GridCoordContainer = styled.div`
+const Malla = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
+
 export const YAxis = () => {
   return (
-    <GridCoordContainer>
+    <Malla>
       {ejeY.map((fit, key) => {
         return (
           <GridCoord key={key}>
@@ -33,6 +34,6 @@ export const YAxis = () => {
           </GridCoord>
         );
       })}
-    </GridCoordContainer>
+    </Malla>
   );
 };

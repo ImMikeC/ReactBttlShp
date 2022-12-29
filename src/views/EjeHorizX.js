@@ -18,13 +18,13 @@ const GridCoord = styled.div`
   }
 `;
 
-const GridCoordContainer = styled.div`
+const Malla = styled.div`
   display: flex;
 `;
 
 export const XAxis = () => {
   return (
-    <GridCoordContainer>
+    <Malla>
       {ejeX.map((sim, key) => {
         return (
           <GridCoord key={key}>
@@ -32,6 +32,6 @@ export const XAxis = () => {
           </GridCoord>
         );
       })}
-    </GridCoordContainer>
+    </Malla>
   );
 };
