@@ -2,7 +2,7 @@ import React from "react";
 import ejeY from "../components/EjeY";
 import styled from "styled-components";
 
-const GridCoord = styled.div`
+const Ubicacion = styled.div`
   box-sizing: border-box;
   background-color: #585858;
   width: 1.5rem;
@@ -29,9 +29,9 @@ export const YAxis = () => {
     <Malla>
       {ejeY.map((fit, key) => {
         return (
-          <GridCoord key={key}>
+          <Ubicacion key={key}>
             <p>{fit}</p>
-          </GridCoord>
+          </Ubicacion>
         );
       })}
     </Malla>

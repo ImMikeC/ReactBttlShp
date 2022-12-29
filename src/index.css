@@ -18,3 +18,7 @@ code {
 p {
   color: aquamarine
 }
+
+label {
+  font-size: 14px;
+}

@@ -2,7 +2,7 @@ import React from "react";
 import ejeX from "../components/EjeX";
 import styled from "styled-components";
 
-const GridCoord = styled.div`
+const Ubicacion = styled.div`
   box-sizing: border-box;
   background-color: #585858;
   width: 1.5rem;
@@ -27,9 +27,9 @@ export const XAxis = () => {
     <Malla>
       {ejeX.map((sim, key) => {
         return (
-          <GridCoord key={key}>
+          <Ubicacion key={key}>
             <p>{sim}</p>
-          </GridCoord>
+          </Ubicacion>
         );
       })}
     </Malla>

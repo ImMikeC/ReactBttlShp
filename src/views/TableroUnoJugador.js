@@ -69,9 +69,12 @@ const Hit = styled.button`
 
 const FireOnX = styled.input`
   width: 5rem;
+  margin-botton: 15px
 `;
 const FireOnY = styled.input`
   width: 5rem;
+  margin-botton: 15px
+
 `;
 
 const ContenedorFire = styled.div`
