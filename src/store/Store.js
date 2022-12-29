@@ -1,11 +1,11 @@
 const getState = ({ setStore, getActions, getStore }) => {
     return {
       store: {
-        compTarget: [],
+        objetivoComp: [],
       },
       actions: {
-        setCompTarget: (x, y) => {
-          setStore({ compTarget: [x, y] });
+        setobjetivoComp: (x, y) => {
+          setStore({ objetivoComp: [x, y] });
         },
       },
     };

@@ -25,10 +25,10 @@ const GridCoordContainer = styled.div`
 export const XAxis = () => {
   return (
     <GridCoordContainer>
-      {ejeX.map((ele, key) => {
+      {ejeX.map((sim, key) => {
         return (
           <GridCoord key={key}>
-            <p>{ele}</p>
+            <p>{sim}</p>
           </GridCoord>
         );
       })}

@@ -59,20 +59,20 @@ const CampoDeBatalla = () => {
   let [tableroJugador, definirTableroJugador] = useState(tableroUno);
 
   useEffect(() => {
-    let enemyX = store.compTarget[0];
-    let enemyY = store.compTarget[1];
+    let enemyX = store.objetivoComp[0];
+    let enemyY = store.objetivoComp[1];
     let arregloOrdenado = [...tableroJugador];
-    if (store.compTarget.length !== 0 && arregloOrdenado[enemyX][enemyY] === 1) {
+    if (store.objetivoComp.length !== 0 && arregloOrdenado[enemyX][enemyY] === 1) {
       arregloOrdenado[enemyX][enemyY] = 3;
       definirTableroJugador(arregloOrdenado);
     } else if (
-      store.compTarget.length !== 0 &&
+      store.objetivoComp.length !== 0 &&
       arregloOrdenado[enemyX][enemyY] === 0
     ) {
       arregloOrdenado[enemyX][enemyY] = 2;
       definirTableroJugador(arregloOrdenado);
     }
-  }, [tableroJugador, store.compTarget]);
+  }, [tableroJugador, store.objetivoComp]);
 
   return (
     <>
@@ -81,123 +81,123 @@ const CampoDeBatalla = () => {
         <EjeVertical>
           <YAxis></YAxis>
           <ContenedorJugador>
-            {tableroJugador[0].map((ele, key) => {
+            {tableroJugador[0].map((sim, key) => {
               return (
                 <SeaComp
                   key={key}
-                  shipRight={ele === 1 ? true : false}
-                  missedShot={ele === 2 ? true : false}
-                  rightShot={ele === 3 ? true : false}
+                  shipRight={sim === 1 ? true : false}
+                  missedShot={sim === 2 ? true : false}
+                  rightShot={sim === 3 ? true : false}
                 >
-                  <p>{ele}</p>
+                  <p>{sim}</p>
                 </SeaComp>
               );
             })}
-            {tableroJugador[1].map((ele, key) => {
+            {tableroJugador[1].map((sim, key) => {
               return (
                 <SeaComp
                   key={key}
-                  shipRight={ele === 1 ? true : false}
-                  missedShot={ele === 2 ? true : false}
-                  rightShot={ele === 3 ? true : false}
+                  shipRight={sim === 1 ? true : false}
+                  missedShot={sim === 2 ? true : false}
+                  rightShot={sim === 3 ? true : false}
                 >
-                  <p>{ele}</p>
+                  <p>{sim}</p>
                 </SeaComp>
               );
             })}
-            {tableroUno[2].map((ele, key) => {
+            {tableroUno[2].map((sim, key) => {
               return (
                 <SeaComp
                   key={key}
-                  shipRight={ele === 1 ? true : false}
-                  missedShot={ele === 2 ? true : false}
-                  rightShot={ele === 3 ? true : false}
+                  shipRight={sim === 1 ? true : false}
+                  missedShot={sim === 2 ? true : false}
+                  rightShot={sim === 3 ? true : false}
                 >
-                  <p>{ele}</p>
+                  <p>{sim}</p>
                 </SeaComp>
               );
             })}
-            {tableroUno[3].map((ele, key) => {
+            {tableroUno[3].map((sim, key) => {
               return (
                 <SeaComp
                   key={key}
-                  shipRight={ele === 1 ? true : false}
-                  missedShot={ele === 2 ? true : false}
-                  rightShot={ele === 3 ? true : false}
+                  shipRight={sim === 1 ? true : false}
+                  missedShot={sim === 2 ? true : false}
+                  rightShot={sim === 3 ? true : false}
                 >
-                  <p>{ele}</p>
+                  <p>{sim}</p>
                 </SeaComp>
               );
             })}
-            {tableroJugador[4].map((ele, key) => {
+            {tableroJugador[4].map((sim, key) => {
               return (
                 <SeaComp
                   key={key}
-                  shipRight={ele === 1 ? true : false}
-                  missedShot={ele === 2 ? true : false}
-                  rightShot={ele === 3 ? true : false}
+                  shipRight={sim === 1 ? true : false}
+                  missedShot={sim === 2 ? true : false}
+                  rightShot={sim === 3 ? true : false}
                 >
-                  <p>{ele}</p>
+                  <p>{sim}</p>
                 </SeaComp>
               );
             })}
-            {tableroJugador[5].map((ele, key) => {
+            {tableroJugador[5].map((sim, key) => {
               return (
                 <SeaComp
                   key={key}
-                  shipRight={ele === 1 ? true : false}
-                  missedShot={ele === 2 ? true : false}
-                  rightShot={ele === 3 ? true : false}
+                  shipRight={sim === 1 ? true : false}
+                  missedShot={sim === 2 ? true : false}
+                  rightShot={sim === 3 ? true : false}
                 >
-                  <p>{ele}</p>
+                  <p>{sim}</p>
                 </SeaComp>
               );
             })}
-            {tableroJugador[6].map((ele, key) => {
+            {tableroJugador[6].map((sim, key) => {
               return (
                 <SeaComp
                   key={key}
-                  shipRight={ele === 1 ? true : false}
-                  missedShot={ele === 2 ? true : false}
-                  rightShot={ele === 3 ? true : false}
+                  shipRight={sim === 1 ? true : false}
+                  missedShot={sim === 2 ? true : false}
+                  rightShot={sim === 3 ? true : false}
                 >
-                  <p>{ele}</p>
+                  <p>{sim}</p>
                 </SeaComp>
               );
             })}
-            {tableroJugador[7].map((ele, key) => {
+            {tableroJugador[7].map((sim, key) => {
               return (
                 <SeaComp
                   key={key}
-                  shipRight={ele === 1 ? true : false}
-                  missedShot={ele === 2 ? true : false}
-                  rightShot={ele === 3 ? true : false}
+                  shipRight={sim === 1 ? true : false}
+                  missedShot={sim === 2 ? true : false}
+                  rightShot={sim === 3 ? true : false}
                 >
-                  <p>{ele}</p>
+                  <p>{sim}</p>
                 </SeaComp>
               );
             })}
-            {tableroJugador[8].map((ele, key) => {
+            {tableroJugador[8].map((sim, key) => {
               return (
                 <SeaComp
                   key={key}
-                  shipRight={ele === 1 ? true : false}
-                  missedShot={ele === 2 ? true : false}
-                  rightShot={ele === 3 ? true : false}
+                  shipRight={sim === 1 ? true : false}
+                  missedShot={sim === 2 ? true : false}
+                  rightShot={sim === 3 ? true : false}
                 >
-                  <p>{ele}</p>
+                  <p>{sim}</p>
                 </SeaComp>
               );
             })}
-            {tableroJugador[9].map((ele, key) => {
+            {tableroJugador[9].map((sim, key) => {
               return (
                 <SeaComp
                   key={key}
-                  shipRight={ele === 1 ? true : false}
-                  missedShot={ele === 2 ? true : false}
-                  rightShot={ele === 3 ? true : false}
+                  shipRight={sim === 1 ? true : false}
+                  missedShot={sim === 2 ? true : false}
+                  rightShot={sim === 3 ? true : false}
                 >
-                  <p>{ele}</p>
+                  <p>{sim}</p>
                 </SeaComp>
               );
             })}

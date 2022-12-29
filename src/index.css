@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background-color: aquamarine;
   /* font-family: "Bangers", cursive;
   font-family: "Montserrat", sans-serif; */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -12,4 +13,8 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+p {
+  color: aquamarine
 }

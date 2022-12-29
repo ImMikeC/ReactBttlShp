@@ -37,7 +37,7 @@ const SeaPlayer = styled.div`
       background-color: green;
     `}
     ${(props) =>
-    props.isSelected &&
+    props.isSsimcted &&
     css`
       background-color: orange;
     `}
@@ -82,8 +82,8 @@ const ContenedorFire = styled.div`
 const TableroComp = () => {
   const { actions } = useContext(Context);
   let [arrayComp, setarrayComp] = useState(tableroDos);
-  let [fireX, setFireX] = useState("");
-  let [fireY, setFireY] = useState("");
+  let [fireX, apuntarEnX] = useState("");
+  let [fireY, apuntarEnY] = useState("");
 
   let fireButtonClick = (x, y) => {
     const newArray = [...arrayComp];
@@ -95,8 +95,8 @@ const TableroComp = () => {
       newArray[x][y] = 2;
       setarrayComp(newArray);
     }
-    setFireX("");
-    setFireY("");
+    apuntarEnX("");
+    apuntarEnY("");
 
     enemyTargetGen();
   };
@@ -104,7 +104,7 @@ const TableroComp = () => {
   let enemyTargetGen = () => {
     let xEnemy = Math.floor(Math.random() * 10);
     let yEnemy = Math.floor(Math.random() * 10);
-    actions.setCompTarget(xEnemy, yEnemy);
+    actions.setobjetivoComp(xEnemy, yEnemy);
   };
 
   return (
@@ -113,19 +113,24 @@ const TableroComp = () => {
         <Hit onClick={() => fireButtonClick(fireX, fireY)}>
           Fire!
         </Hit>
-        <br></br>
-        <label>Eje x (0-9):</label>
+        <br>
+        </br>
+        <br>
+        </br>
+        <label>Posición Barra Vertical:</label>
         <FireOnX
           value={fireX}
           onChange={(e) => {
-            setFireX(e.target.value);
+            apuntarEnX(e.target.value);
           }}
         ></FireOnX>
-        <label>Eje y (0-9):</label>
+        <br>
+        </br>
+        <label>Posición Barra Horizontal:</label>
         <FireOnY
           value={fireY}
           onChange={(e) => {
-            setFireY(e.target.value);
+            apuntarEnY(e.target.value);
           }}
         ></FireOnY>
       </ContenedorFire>
@@ -138,8 +143,8 @@ const TableroComp = () => {
               return (
                 <SeaPlayer
                   onClick={() => {
-                    setFireY(key);
-                    setFireX(0);
+                    apuntarEnY(key);
+                    apuntarEnX(0);
                   }}
                   key={key}
                   rightShot={fit === 3 ? true : false}
@@ -153,8 +158,8 @@ const TableroComp = () => {
               return (
                 <SeaPlayer
                   onClick={() => {
-                    setFireY(key);
-                    setFireX(1);
+                    apuntarEnY(key);
+                    apuntarEnX(1);
                   }}
                   key={key}
                   rightShot={fit === 3 ? true : false}
@@ -168,8 +173,8 @@ const TableroComp = () => {
               return (
                 <SeaPlayer
                   onClick={() => {
-                    setFireY(key);
-                    setFireX(2);
+                    apuntarEnY(key);
+                    apuntarEnX(2);
                   }}
                   key={key}
                   rightShot={fit === 3 ? true : false}
@@ -183,8 +188,8 @@ const TableroComp = () => {
               return (
                 <SeaPlayer
                   onClick={() => {
-                    setFireY(key);
-                    setFireX(3);
+                    apuntarEnY(key);
+                    apuntarEnX(3);
                   }}
                   key={key}
                   rightShot={fit === 3 ? true : false}
@@ -198,8 +203,8 @@ const TableroComp = () => {
               return (
                 <SeaPlayer
                   onClick={() => {
-                    setFireY(key);
-                    setFireX(4);
+                    apuntarEnY(key);
+                    apuntarEnX(4);
                   }}
                   key={key}
                   rightShot={fit === 3 ? true : false}
@@ -214,8 +219,8 @@ const TableroComp = () => {
               return (
                 <SeaPlayer
                   onClick={() => {
-                    setFireY(key);
-                    setFireX(5);
+                    apuntarEnY(key);
+                    apuntarEnX(5);
                   }}
                   key={key}
                   rightShot={fit === 3 ? true : false}
@@ -230,8 +235,8 @@ const TableroComp = () => {
               return (
                 <SeaPlayer
                   onClick={() => {
-                    setFireY(key);
-                    setFireX(6);
+                    apuntarEnY(key);
+                    apuntarEnX(6);
                   }}
                   key={key}
                   rightShot={fit === 3 ? true : false}
@@ -245,8 +250,8 @@ const TableroComp = () => {
               return (
                 <SeaPlayer
                   onClick={() => {
-                    setFireY(key);
-                    setFireX(7);
+                    apuntarEnY(key);
+                    apuntarEnX(7);
                   }}
                   key={key}
                   rightShot={fit === 3 ? true : false}
@@ -260,8 +265,8 @@ const TableroComp = () => {
               return (
                 <SeaPlayer
                   onClick={() => {
-                    setFireY(key);
-                    setFireX(8);
+                    apuntarEnY(key);
+                    apuntarEnX(8);
                   }}
                   key={key}
                   rightShot={fit === 3 ? true : false}
@@ -275,8 +280,8 @@ const TableroComp = () => {
               return (
                 <SeaPlayer
                   onClick={() => {
-                    setFireY(key);
-                    setFireX(9);
+                    apuntarEnY(key);
+                    apuntarEnX(9);
                   }}
                   key={key}
                   rightShot={fit === 3 ? true : false}

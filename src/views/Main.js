@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import CampoDeBatalla from "./TableroDosComp";
+import PlayerBattleGrid from "./TableroDosComp";
 import TableroComp from "./TableroUnoJugador";
 //import bkg from "../img/bkg.jpg";
 
 //Controls Container
 const ControlsContainer = styled.div`
-  background-color: white;
+  background-color: #ada879;
   height: 80px;
   display: flex;
   justify-content: space-around;
@@ -36,7 +36,7 @@ const ControlsContainerView = () => {
         <Title>ReactJS BattleShip</Title>
       </ControlsContainer>
       <BattleGridsContainer>
-        <CampoDeBatalla />
+        <PlayerBattleGrid />
         <TableroComp />
       </BattleGridsContainer>
     </>
